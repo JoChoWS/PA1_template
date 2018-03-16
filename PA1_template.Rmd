@@ -2,8 +2,9 @@
 title: "Reproducible Research: Course Project #1"
 author: "Josh Choate"
 date: "March 14, 2018"
-output: html_document
-keep_md: true
+output: 
+  html_document:
+    keep_md: true
 ---
 The following is a brief analysis of activity monitoring data. This is my attempt at Course Project #1 in the Coursera Reproducible Research on-line course by Johns Hopkins University.
 
