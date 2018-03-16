@@ -64,7 +64,7 @@ ggplot(totals, aes(steps)) + geom_histogram(fill = "steelblue", color = "black",
       labs(title = "Total Steps Taken", y = "days")
 ```
 
-![](PA1_template_forked_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](PA1_template_forked_files/figure-html/figure_1-1.png)<!-- -->
 
 
 2. Mean and Median of the total number of steps taken per day:
@@ -91,7 +91,7 @@ plot(totals$date, totals$average, main = "Daily Step Count Averages", xlab = "Da
      ylab = "Average Number of Steps per Five Minutes")
 ```
 
-![](PA1_template_forked_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](PA1_template_forked_files/figure-html/figure_2-1.png)<!-- -->
 
 
 4. The 5-minute interval that, on average, contains the maximum number of steps:
@@ -147,7 +147,7 @@ ggplot(activity_data, aes(x=date, y=steps)) +
 ## Warning: Removed 576 rows containing missing values (geom_path).
 ```
 
-![](PA1_template_forked_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](PA1_template_forked_files/figure-html/figure_3-1.png)<!-- -->
 
 The above plot shows that the large majority of NA values occurred on specific days. Notably, there is no data for Oct.1 and a small amout for October 2. Thus, it appears likely that the subject did not begin tracking his/her steps until late on Oct. 2. Consequently, those two dates will be omitted from the set. The remaining values will be imputed using the mice package. (Against the assignment protocal, I've set results="hide" here to avoid showing the mice function's lengthy output.)
 
@@ -183,7 +183,7 @@ ggplot(totals_NArm, aes(steps)) + geom_histogram(fill = "green", color = "black"
       labs(title = "Total Steps Taken (NA Values Removed)", y = "days")
 ```
 
-![](PA1_template_forked_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](PA1_template_forked_files/figure-html/figure_4-1.png)<!-- -->
 
 
 8. Panel plot comparing the average number of steps taken per 5-minute interval across weekdays and weekends:
@@ -202,7 +202,7 @@ with(weekday, plot(date, steps, type = "l", main = "Weekday Steps"))
 with(weekend, plot(date, steps, type = "l", main = "Weekend Steps"))
 ```
 
-![](PA1_template_forked_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](PA1_template_forked_files/figure-html/figure_5-1.png)<!-- -->
 
 
 Thank you and good night.

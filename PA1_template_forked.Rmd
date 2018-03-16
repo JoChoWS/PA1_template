@@ -24,7 +24,7 @@ activity_data$date <- as.Date(activity_data$date)
 Next, the assigned tasks (numbered 1 - 8) are performed.
 
 1. Histogram of the total number of steps taken each day:
-```{r}
+```{r figure_1}
 totals <- activity_data %>%
           group_by(date) %>%
           summarise(steps = sum(steps, na.rm = TRUE))
@@ -43,7 +43,7 @@ head(totals) %>%
 
 
 3. Time series plot of the average number of steps taken:
-```{r}
+```{r figure_2}
 totals$average <- totals$steps/length(totals$date)
 
 plot(totals$date, totals$average, main = "Daily Step Count Averages", xlab = "Date", 
@@ -76,7 +76,7 @@ NA_ratio
 ```
 
 13% is a significant figure, but amounts to less than 5 of the 61 days of data. Are these 5+ days of data reflective of certain days when the tracker was not worn, or are the missing values randomly scattered? 
-```{r}
+```{r figure_3}
 ggplot(activity_data, aes(x=date, y=steps)) + 
   geom_line() +
   scale_x_date(date_breaks = '10 days', date_labels = '%m/%d')
@@ -101,7 +101,7 @@ activity_data_NArm$steps <- complete_steps[,1]
 
 
 7. Histogram of total number of steps per day once missing values are replaced:
-```{r}
+```{r figure_4}
 totals_NArm <- activity_data_NArm %>%
                group_by(date) %>%
                summarise(steps = sum(steps, na.rm = TRUE))
@@ -112,7 +112,7 @@ ggplot(totals_NArm, aes(steps)) + geom_histogram(fill = "green", color = "black"
 
 
 8. Panel plot comparing the average number of steps taken per 5-minute interval across weekdays and weekends:
-```{r}
+```{r figure_5}
 totals$weekend <- grepl("S.+",weekdays(totals$date))
 
 weekday <- filter(totals, weekend == FALSE)
