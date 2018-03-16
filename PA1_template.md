@@ -1,9 +1,28 @@
+Reproducible Research: Course Project \#1
+================
+Josh Choate
+March 16, 2018
+
 The following is a brief analysis of activity monitoring data. This is my attempt at Course Project \#1 in the Coursera Reproducible Research on-line course by Johns Hopkins University.
 
 First, the necessary R packages and the activity monitoring data are loaded:
 
 ``` r
 library(dplyr)
+```
+
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+
+``` r
 library(ggplot2)
 library(reshape2)
 library(rmarkdown)
@@ -110,7 +129,11 @@ The above plot shows that the large majority of NA values occurred on specific d
 
 ``` r
 library(mice)
+```
 
+    ## Loading required package: lattice
+
+``` r
 activity_data_NArm <- filter(activity_data, date > "2012-10-02")
 steps_only <- data.frame(activity_data_NArm[,1], activity_data_NArm[,3])
 
