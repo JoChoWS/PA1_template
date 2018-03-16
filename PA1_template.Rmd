@@ -3,8 +3,8 @@ title: "Reproducible Research: Course Project #1"
 author: "Josh Choate"
 date: "March 14, 2018"
 output: 
-  html_document:
-    keep_md: true
+  md_document:
+    variant: markdown_github
 ---
 The following is a brief analysis of activity monitoring data. This is my attempt at Course Project #1 in the Coursera Reproducible Research on-line course by Johns Hopkins University.
 
@@ -14,6 +14,7 @@ First, the necessary R packages and the activity monitoring data are loaded:
 library(dplyr)
 library(ggplot2)
 library(reshape2)
+library(rmarkdown)
 
 activity_data <- read.csv("C:/Users/JoCho/Desktop/activity.csv")
 
